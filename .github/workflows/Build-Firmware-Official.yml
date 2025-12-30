@@ -89,7 +89,7 @@ jobs:
             "target": [
               "Nanopi-r2s",
               "Nanopi-r3s",
-              "Nanopi-r4s',
+              "Nanopi-r4s",
               "Orangepi Pc 2",
               "Orangepi R1 Plus",
               "Orangepi R1 Plus LTS",
