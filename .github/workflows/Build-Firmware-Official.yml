@@ -31,6 +31,7 @@ on:
           - Raspberry Pi 2B
           - Raspberry Pi 3B
           - Raspberry Pi 4B
+          - Raspberry Pi 5
           - X86-64
       tunnel:
         description: "Select Tunnel VPN"
@@ -39,6 +40,7 @@ on:
         type: choice
         options:
           - openclash
+          - nikki
           - openclash-nikki
           - openclash-insomclash
           - openclash-nikki-passwall
@@ -89,13 +91,14 @@ jobs:
             "target": [
               "Nanopi-r2s",
               "Nanopi-r3s",
-              "Nanopi-r4s",
+              "Nanopi-r4s',
               "Orangepi Pc 2",
               "Orangepi R1 Plus",
               "Orangepi R1 Plus LTS",
               "Raspberry Pi 2B",
               "Raspberry Pi 3B",
               "Raspberry Pi 4B",
+              "Raspberry Pi 5",
               "X86-64"
             ]
           }
