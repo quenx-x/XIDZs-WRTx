@@ -25,10 +25,10 @@ nikki_file_ipk="nikki_${ARCH_3}-openwrt-${VEROP}"
 nikki_file_ipk_down=$(curl -s "https://api.github.com/repos/de-quenx/nikki-x/releases" | grep "browser_download_url" | grep -oE "https.*${nikki_file_ipk}.*.tar.gz" | head -n 1)
 
 # Insomclash URL generation
-#insomclash_file_ipk="luci-app-insomclash"
-#insomclash_core_ipk="insomclash_1.0.3-r1_${ARCH_3}"
-#insomclash_file_ipk_down=$(curl -s "https://api.github.com/repos/bobbyunknown/Insomclash/releases" | grep "browser_download_url" | grep -oE "https.*${insomclash_file_ipk}.*.ipk" | head -n 1)
-#insomclash_core_ipk_down=$(curl -s "https://api.github.com/repos/bobbyunknown/Insomclash/releases" | grep "browser_download_url" | grep -oE "https.*${insomclash_core_ipk}.ipk" | head -n 1)
+insomclash_file_ipk="luci-app-insomclash"
+insomclash_core_ipk="insomclash_1.0.3-r1_${ARCH_3}"
+insomclash_file_ipk_down=$(curl -s "https://api.github.com/repos/bobbyunknown/Insomclash/releases" | grep "browser_download_url" | grep -oE "https.*${insomclash_file_ipk}.*.ipk" | head -n 1)
+insomclash_core_ipk_down=$(curl -s "https://api.github.com/repos/bobbyunknown/Insomclash/releases" | grep "browser_download_url" | grep -oE "https.*${insomclash_core_ipk}.ipk" | head -n 1)
 
 # Function to download and setup OpenClash
 setup_openclash() {
@@ -54,11 +54,11 @@ setup_nikki() {
 }
 
 # Function to download and setup Insomclash
-#setup_insomclash() {
-    #log "INFO" "Downloading Insomclash packages"
-    #ariadl "${insomclash_file_ipk_down}" "packages/luci-app-insomclash.ipk" || error_msg "Error: Failed to download luci-app-insomclash package."
-    #ariadl "${insomclash_core_ipk_down}" "packages/insomclash.ipk" || error_msg "Error: Failed to download Insomclash core package."
-#}
+setup_insomclash() {
+    log "INFO" "Downloading Insomclash packages"
+    ariadl "${insomclash_file_ipk_down}" "packages/luci-app-insomclash.ipk" || error_msg "Error: Failed to download luci-app-insomclash package."
+    ariadl "${insomclash_core_ipk_down}" "packages/insomclash.ipk" || error_msg "Error: Failed to download Insomclash core package."
+}
 
 case "$1" in
     openclash)
