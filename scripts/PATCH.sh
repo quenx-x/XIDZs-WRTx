@@ -55,10 +55,10 @@ configure_amlogic() {
     fi
 }
 
-# Apply x86_64 configurations
-configure_x86_64() {
-    if [[ "${ARCH_2}" == "x86_64" ]]; then
-        log "INFO" "Applying x86_64 configurations"
+# Apply x86_64 and i386 configurations
+configure_x86() {
+    if [[ "${ARCH_2}" == "x86_64" ]] || [[ "${ARCH_2}" == "i386" ]]; then
+        log "INFO" "Applying ${ARCH_2} configurations"
         # disable iso
         sed -i "s|CONFIG_ISO_IMAGES=y|# CONFIG_ISO_IMAGES is not set|" .config
         # disable vhdx
@@ -74,7 +74,7 @@ main() {
     patch_makefile
     configure_partitions
     configure_amlogic
-    configure_x86_64
+    configure_x86
     log "INFO" "Builder patch completed successfully!"
 }
 
