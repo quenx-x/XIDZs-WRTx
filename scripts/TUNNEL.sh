@@ -27,8 +27,8 @@ nikki_file_ipk_down=$(curl -s "https://api.github.com/repos/de-quenx/nikki-x/rel
 # Insomclash URL generation
 insomclash_file_ipk="luci-app-insomclash"
 insomclash_core_ipk="insomclash_1.0.3-r1_${ARCH_3}"
-insomclash_file_ipk_down=$(curl -s "https://api.github.com/repos/bobbyunknown/Insomclash/releases" | grep "browser_download_url" | grep -oE "https.*${insomclash_file_ipk}.*.ipk" | head -n 1)
-insomclash_core_ipk_down=$(curl -s "https://api.github.com/repos/bobbyunknown/Insomclash/releases" | grep "browser_download_url" | grep -oE "https.*${insomclash_core_ipk}.ipk" | head -n 1)
+insomclash_file_ipk_down=$(curl -s "https://api.github.com/repos/bobbyunknown/FusionTunX/releases" | grep "browser_download_url" | grep -oE "https.*${insomclash_file_ipk}.*.ipk" | head -n 1)
+insomclash_core_ipk_down=$(curl -s "https://api.github.com/repos/bobbyunknown/FusionTunX/releases" | grep "browser_download_url" | grep -oE "https.*${insomclash_core_ipk}.ipk" | head -n 1)
 
 # Function to download and setup OpenClash
 setup_openclash() {
